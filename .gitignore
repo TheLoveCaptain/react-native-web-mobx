@@ -61,3 +61,5 @@ chrome-user-data
 .eslintrc.js
 .watchmanconfig
 .expo
+android/app/*
+android/.project

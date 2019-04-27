@@ -8,6 +8,8 @@ import TopNav from "./TopNav";
 import SecondScreen from "./SecondScreen";
 import UserScreen from "./UserScreen";
 import DasModalScreen from "./DasModalScreen";
+import { Provider } from "mobx-react";
+import {stores} from './mobx/Stores';
 
 const routeMap = {
   Home: {
@@ -35,11 +37,13 @@ class App extends Component {
   render() {
 		
     return (
+			<Provider {...stores}>
       <View style={{ height: "100vh", width: "100vw" }}>
         <TopNav />
         {WebRoutesGenerator({ routeMap })}
         <ModalContainer />
       </View>
+			</Provider>
     );
   }
 }

@@ -9,6 +9,7 @@ import HomeScreen from "./HomeScreen";
 import DasModalScreen from "./DasModalScreen";
 import SecondScreen from "./SecondScreen";
 import UserScreen from "./UserScreen";
+import {Provider} from "mobx-react"
 
 const HomeStack = createStackNavigator({
   Home: { screen: HomeScreen, navigationOptions: { title: "Home" } }
@@ -37,7 +38,7 @@ const RootStack = createStackNavigator(
 
 class App extends Component {
   render() {
-    return <RootStack />;
+    return <Provider><RootStack /></Provider>;
   }
 }
 

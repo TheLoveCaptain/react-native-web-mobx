@@ -1,7 +1,10 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import ParseUtil from "./data/ParseUtils";
+import { observer, inject } from "mobx-react/native";
 
+@inject("appStore")
+@observer
 class UserScreen extends React.Component {
 
 	constructor(){
@@ -11,7 +14,7 @@ class UserScreen extends React.Component {
 	}
 
 	async componentDidMount(){
-		let p = new ParseUtil().parse;
+		let p = this.props.appStore.parse;
 		let liveQuery = new p.Query('MatrixData');
 		let mat = [];
 		let res = await liveQuery.find();

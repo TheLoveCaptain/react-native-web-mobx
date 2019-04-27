@@ -8,6 +8,7 @@ import TopNav from "./TopNav";
 import SecondScreen from "./SecondScreen";
 import UserScreen from "./UserScreen";
 import DasModalScreen from "./DasModalScreen";
+const Parse = require('parse');
 
 const routeMap = {
   Home: {
@@ -32,6 +33,18 @@ const routeMap = {
 };
 
 class App extends Component {
+	constructor(){
+		super();
+
+		Parse.initialize('R498Vf88BbLf01HwK45KGUzHpoMvXhhreR0iHulu', 'Wo2Lm7StDNy8sBG2WwU5GTamJYj0Rw2iWVr6LMMX');
+		Parse.serverURL = 'https://backtoharmony.back4app.io';
+
+		let liveQuery = new Parse.Query('MatrixData');
+		let results = liveQuery.find().then(res  => {
+			console.log(res);
+		})
+		console.log(Parse);
+	}
   render() {
     return (
       <View style={{ height: "100vh", width: "100vw" }}>

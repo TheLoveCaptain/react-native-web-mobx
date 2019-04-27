@@ -8,7 +8,6 @@ import TopNav from "./TopNav";
 import SecondScreen from "./SecondScreen";
 import UserScreen from "./UserScreen";
 import DasModalScreen from "./DasModalScreen";
-import ParseUtil from './data/ParseUtils';
 
 const routeMap = {
   Home: {
@@ -34,11 +33,7 @@ const routeMap = {
 
 class App extends Component {
   render() {
-		let p = new ParseUtil();
-		let liveQuery = new p.parse.Query('MatrixData');
-		liveQuery.find().then(res  => {
-			console.log(res);
-		})
+		
     return (
       <View style={{ height: "100vh", width: "100vw" }}>
         <TopNav />

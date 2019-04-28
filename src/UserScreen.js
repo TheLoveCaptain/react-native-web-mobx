@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import ParseUtil from "./data/ParseUtils";
-import { observer, inject } from "mobx-react/native";
+import { observer, inject } from "mobx-react";
 
 @inject("appStore")
 @observer
